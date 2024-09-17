@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose: }b>a\\
+        &\varepsilon \coloneqq \frac{b-a}{2}\\
+        &b>a\implies \frac{b-a}{2}>0\\
+        \Rightarrow&\varepsilon >0\\
+        &b-\varepsilon =b-\frac{b-a}{2}=\frac{a+b}{2}\\
+        &\frac{a+b}{2}>a\\
+        \Rightarrow&b-\varepsilon >a\\
+        &b-\varepsilon >a\nLeftrightarrow a>b-\varepsilon\\
+        \Rightarrow&a\geqslant b\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &a^2-b^2=a^2+ab-b^2-ab\\
+        &=a(a+b)-b(a+b)\\
+        &=(a+b)(a-b)\\
+        &b\coloneqq -a\\
+        \Rightarrow&a^2-(-a)^2=(a+(-a))(a-(-a))\\
+        &=0\times (a+a)\\
+        &=0\\
+        \Rightarrow&a^2-(-a)^2=0\\
+        \Rightarrow&(-a)^2=a^2\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\forall a,b\in \mathbb{R}:\\
+        &\frac{1}{2}a,\frac{1}{2}b\in\mathbb{R} \\
+        \Rightarrow&(\frac{1}{2}a-\frac{1}{2}b)^2\geqslant 0\\
+        &\frac{1}{4}a^2-\frac{1}{2}ab+\frac{1}{4}b^2\geqslant0\\
+        &\frac{1}{2}a^2+\frac{1}{2}b^2\geqslant \frac{1}{4}a^2+\frac{1}{2}ab+\frac{1}{4}b^2\\
+        &\frac{1}{2}(a^2+b^2)\geqslant [\frac{1}{2}(a+b)]^2\\
+        &\\
+        &\frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2\implies a=b:\\
+        &\frac{1}{2}a^2+\frac{1}{2}b^2-[\frac{1}{2}(a+b)]^2=0\\
+        &\frac{1}{2}a^2+\frac{1}{2}b^2-(\frac{1}{4}a^2+\frac{1}{2}ab+\frac{1}{4}b^2)\\
+        &\frac{1}{4}a^2-\frac{1}{2}ab+\frac{1}{4}b^2=0\\
+        &[\frac{1}{2}(a-b)]^2=0\\
+        &a-b=0\\
+        &a=b\\
+        \Rightarrow&\frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2\implies a=b\\
+        &\\
+        &a=b\implies \frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2:\\
+        &LHS=\frac{1}{2}(a^2+a^2)=a^2\\
+        &RHS=[\frac{1}{2}(a+a)]^2=a^2\\
+        &LHS=RHS\\
+        \Rightarrow&\frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2\\
+        \Rightarrow&a=b\implies \frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2\\
+        \Rightarrow&\frac{1}{2}(a^2+b^2)= [\frac{1}{2}(a+b)]^2\Leftrightarrow a=b\\
+    \end{align*}
+\end{proof}
+\end{document}
