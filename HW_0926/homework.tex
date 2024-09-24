@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+
+
+\begin{document}
+
+\section*{Question 1}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\omega \text{ is a lower bound of }S\\
+        \Rightarrow&\forall x\in S, \omega \leqslant x\\
+        &\forall x>\omega\in \mathbb{R} : \omega\in S\\
+        \Rightarrow&x\nleqslant n,\forall n\in S\\
+        \Rightarrow&\forall x>\omega\in\mathbb{R} :x\text{ is not a lower bound of }S\\
+        \Rightarrow&\omega\text{ is the greatest lower bound of }S\\
+        \Rightarrow&\omega=\inf S\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\inf A\coloneqq \omega\\
+        &\forall x\in -A,-x\in A\\
+        \Rightarrow&\omega\leqslant-x\\
+        &x\leqslant -\omega\\
+        \Rightarrow&\-\omega\text{ is an upper bound of }-A\\
+        &\exists \beta\ne \omega\text{ is any upper bound of }-A\\
+        \Rightarrow&\forall x\in -A,x\leqslant\beta\\
+        &-\beta\leqslant -x\\
+        \Rightarrow&\forall -x\in A,-\beta\leqslant -x\\
+        &-\beta\text{ is a lower bound of }A\\
+        &\omega =\inf A\\
+        \Rightarrow&-\beta \leqslant \omega\\
+        &-\omega\leqslant \beta\\
+        &\beta\text{ is arbitrary}\implies \forall \beta \text{ is an upper bound of }-A,-\omega\leqslant\beta\\
+        \Rightarrow&-\omega=\sup (-A)\\
+        \Rightarrow&-\inf A=\sup(-A)\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+~
+
+\section*{Question 3}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose: }\sup(A\cap B)>\sup A,\sup B\\
+        \Rightarrow&\exists m\in A\cap B:\forall a\in A,b\in B, m>a,b\\
+        \Rightarrow&m\notin A\land m\notin B\\
+        &\forall n\in A\cap B, n\in A\land n\in B\\
+        \Rightarrow&m\notin A\cap B\\
+        &m\notin A\cap B\nLeftrightarrow m\in A\cap B\\
+        \Rightarrow&\sup(A\cap B)\leqslant\sup A,\sup B\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &A\coloneqq [0,1)\\
+    &B\coloneqq \{1\}\\
+    &\sup A=1\\
+    &\sup B=1\\
+    &A\cap B=\emptyset\\
+    \Rightarrow&\nexists \sup(A\cap B)\\
+    \Rightarrow&\sup A=\sup B\ne \sup(A\cap B)\\
+\end{align*}
+\end{document}
