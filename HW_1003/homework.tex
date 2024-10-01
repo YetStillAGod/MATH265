@@ -1,0 +1,217 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\section*{Question 1}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\forall n\in \mathbb{Z} _+, \frac{1}{n}\geqslant0\\
+        \Rightarrow&1-\frac{1}{n}\leqslant1\\
+        &(-1)^n=1\text{ or }-1\\
+        \Rightarrow&(-1)^n=1(1-\frac{1}{n})\leqslant 1\\
+        \Rightarrow&1\text{ is an upper bound of }S\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose}:\exists m<1\text{ is an upper bound of }S\\
+        \Rightarrow&\exists n\in \mathbb{R} _+:m= 1-\frac{1}{n}\\
+        \Rightarrow&\exists a,b\in\mathbb{Z} _+:a\leqslant n< b\\
+        \Rightarrow&1-\frac{1}{a}\leqslant 1-\frac{1}{n}< 1-\frac{1}{b}\\
+        &1-\frac{1}{b}\in S\\
+        \Rightarrow&\exists x\in S:m< x\\
+        \Rightarrow&m\text{ is not an upper bound}\nLeftrightarrow m\text{ is an upper bound}\\
+        \Rightarrow&m\text{ is an upper bound of }S\implies m\geqslant 1\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{b}:\forall m\text{ is an upper bound of }S\implies m\geqslant 1\\
+        &\text{a}:1\text{ is an upper bound of }S\\
+        \Rightarrow&1\text{ is the least upper bound of }S\\
+        \Rightarrow&\sup S=1\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{case 1}:\sup(A+B)\leqslant\sup(A)+\sup(B)\\
+        &A+B=\{a,b|a\in A,b\in B\}\\
+        &c\in A+B\coloneqq a+b,a\in A,b\in B\\
+        &\forall a\in A, a\leqslant \sup A, \forall b\in B, b\leqslant \sup B\\
+        \Rightarrow&\forall a\in A, b\in B, c\leqslant \sup A+\sup B\\
+        \Rightarrow&\sup A+\sup B\text{ is an upper bound of }A+B\\
+        \Rightarrow&\sup(A+B)\leqslant \sup A+\sup B\\
+        &\\
+        &\text{case 2}:\sup A+\sup B\leqslant \sup(A+B)\\
+        &\text{arbitrary }a+b\in A+B\\
+        \Rightarrow&a+b\leqslant \sup(A+B)\\
+        &a\leqslant \sup(A+B)-b\\
+        \Rightarrow&\forall a\in A,a\leqslant \sup(A+B)-b\\
+        \Rightarrow&\sup(A+B)-b\text{ is an upper bound of }A\\
+        \Rightarrow&\sup A\leqslant \sup(A+B)-b\\
+        &b\leqslant \sup(A+B)-\sup A\\
+        \Rightarrow&\forall b\in B,b\leqslant \sup(A+B)-\sup A\\
+        \Rightarrow&\sup(A+B)-\sup A\text{ is an upper bound of }B\\
+        \Rightarrow&\sup B\leqslant \sup(A+B)-\sup A\\
+        &\sup A+\sup B\leqslant \sup(A+B)\\
+        &\\
+        &\sup(A+B)\leqslant \sup A+\sup B\land \sup A+\sup B\leqslant \sup(A+B)\\
+        \Rightarrow&\sup(A+B)=\sup A+\sup B\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &S\coloneqq\{x^n,n\in\mathbb{Z} _+\}\\
+        &\text{Supppose}:\exists m:m\text{ is the upper bound of }S\\
+        \Rightarrow&\forall n\in\mathbb{Z} _+,m\geqslant x^n\\
+        &\log_{x}(m)\geqslant n\\
+        &p\coloneqq\lceil\log_{x}(m) \rceil +1\\
+        \Rightarrow&p>\log_{x}(m)\\
+        \Rightarrow&x^p>x^{\log_{x}(m)}=m\\
+        &p=\lceil\log_{x}(m) \rceil +1\\
+        \Rightarrow&p\in\mathbb{Z} _+\\
+        \Rightarrow&x^p\in S\\
+        \Rightarrow&\exists x^p\in S:x^p>m\nleftrightarrow m\text{ is the upper bound of }S\\
+        \Rightarrow&S\text{ is not bounded above}\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &A\coloneqq\{a_n,n\in\mathbb{Z} _+\}\\
+        &B\coloneqq\{b_n,n\in\mathbb{Z} _+\}\\
+        &(1,4)=\bigcup_{n=1}^{\infty}I_n,[2,3]=\bigcap_{n=1}^{\infty}I_n\\
+        \Leftrightarrow&\exists I_n=[a_n,b_n):\inf A=1\notin A,\inf B=3\in B, \sup A=2\in A,\sup B=4\notin B\\
+        &I_n\coloneqq[1+\frac{1}{n},4-\frac{1}{n})\\
+        &A\coloneqq\{1+\frac{1}{n},n\in\mathbb{Z} _+\}\\
+        &B\coloneqq\{4-\frac{1}{n},n\in\mathbb{Z} _+\}\\
+        &\\
+        &\inf A=1\notin A:\\
+        &\forall n\in\mathbb{Z} _+,\frac{1}{n}>0\\
+        \Rightarrow&1\notin A, \forall a_n\in A,a_n>1\\
+        &1\text{ is a lower bound of }A\\
+        &\text{Suppose}: \exists p>1: p\text{ is a lower bound of }A\\
+        &\exists \varepsilon>0:p=1+\varepsilon\\
+        &\varepsilon>0\\
+        \Rightarrow&\exists n_1\in\mathbb{Z} _+:\varepsilon<n_1\\
+        \Rightarrow&1+\frac{1}{\varepsilon}>1+\frac{1}{n_1}\\
+        &1+\frac{1}{n_1}\in A\\
+        \Rightarrow&\exists a_i\in A:a_i<p\nLeftrightarrow p\text{ is a lower bound of }A\\
+        \Rightarrow&\nexists p>1:p\text{ is a lower bound of }A\\
+        \Rightarrow&1\text{ is the most lower bound of }A\\
+        &\inf A=1\\
+        \Rightarrow&\inf A=1\notin A\\
+        &\\
+        &\inf B=3\in B:\\
+        &n=1:4-\frac{1}{1}=3\in B\\
+        &\forall n\in\mathbb{Z} _+,\frac{1}{n}\leqslant 1\\
+        \Rightarrow&4-\frac{1}{n}\geqslant 3\\
+        &3\text{ is a lower bound of }B\\
+        &\text{Suppose}: \exists q>3: q\text{ is a lower bound of }B\\
+        &\exists \varepsilon<1:q=4-\varepsilon\\
+        &\varepsilon<1\\
+        \Rightarrow&\exists n_2\in\mathbb{Z} _+:\frac{1}{\varepsilon}>n_2\\
+        \Rightarrow&4-\varepsilon>4-\frac{1}{n_2}\\
+        &4-\frac{1}{n_2}\in B\\
+        \Rightarrow&\exists b_i\in B:b_i<q\nLeftrightarrow q\text{ is a lower bound of }B\\
+        \Rightarrow&\nexists q>3:q\text{ is a lower bound of }B\\
+        \Rightarrow&3\text{ is the most lower bound of }B\\
+        &\inf B=3\\
+        \Rightarrow&\inf B=3\in B\\
+        &\\
+        & \sup A=2\in A:\\
+        &n=1:1+\frac{1}{1}=2\in A\\
+        &\forall b\in\mathbb{Z} _+,\frac{1}{n}\leqslant 1\\
+        \Rightarrow&1+\frac{1}{n}\leqslant 2\\
+        &2\text{ is an upper bound of }A\\
+        &\text{Suppose}:\exists m<2\text{ is a upper bound of }A\\
+        &\exists \varepsilon<1:m=1+\varepsilon\\
+        &\varepsilon<1\\
+        &\exists n_3\in\mathbb{Z} _+:\frac{1}{\varepsilon}>n_3\\
+        &1+\varepsilon<1+\frac{1}{n_3}\\
+        &1+\frac{1}{n_3}\in A\\
+        \Rightarrow&\exists a_i\in A:m<a_i\nLeftrightarrow m\text{ is a upper bound of }A\\
+        \Rightarrow&\nexists m<2:m\text{ is a upper bound of }A\\
+        \Rightarrow&2\text{ is the least upper bound of }A\\
+        &\sup A=2\\
+        \Rightarrow&\sup A=2\in A\\
+        &\\
+        &\sup B=4\notin B:\\
+        &\forall n\in\mathbb{Z} _+,\frac{1}{n}>0\\
+        \Rightarrow&4\notin B,\forall b_n\in B, b_n<4\\
+        \Rightarrow&4\text{ is a upper bound of }B\\
+        &\text{Suppose}:\exists s<4 \text{ is an upper bound of }B\\
+        &\exists \varepsilon>0: s=4-\varepsilon\\
+        &\varepsilon>0\\
+        \Rightarrow&\exists n_4\in\mathbb{Z} _+:\varepsilon<n_4\\
+        \Rightarrow&4-\frac{1}{\varepsilon}<4-\frac{1}{n_4}\\
+        &4-\frac{1}{n_4}\in B\\
+        \Rightarrow&\exists b_i\in B:s<b_i\nLeftrightarrow s \text{ is an upper bound of }B\\
+        \Rightarrow&\nexists s<4\text{ is an upper bound of }B\\
+        \Rightarrow&4\text{ is the least upper bound of }B\\
+        &\sup B=4\\
+        \Rightarrow&\sup B=4\notin B\\
+        &\\
+        \Rightarrow&I_n=[a_n,b_n)=[1+\frac{1}{n},4-\frac{1}{n}):\\
+        &(1,4)=\bigcup_{n=1}^{\infty}I_n,[2,3]=\bigcap_{n=1}^{\infty}I_n\\
+    \end{align*}
+\end{proof}
+\end{document}
