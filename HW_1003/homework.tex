@@ -31,8 +31,12 @@
     \begin{align*}
         &\forall n\in \mathbb{Z} _+, \frac{1}{n}\geqslant0\\
         \Rightarrow&1-\frac{1}{n}\leqslant1\\
-        &(-1)^n=1\text{ or }-1\\
-        \Rightarrow&(-1)^n=1(1-\frac{1}{n})\leqslant 1\\
+        &2|n+1\implies (-1)^n=-1\\
+        \Rightarrow&(-1)^n(1-\frac{1}{n})<1\\
+        &2|n\implies  (-1)^n=1\\
+        \Rightarrow&(-1)^n(1-\frac{1}{n})\leqslant 1\\
+        &\\
+        \Rightarrow&(-1)^n(1-\frac{1}{n})\leqslant 1\\
         \Rightarrow&1\text{ is an upper bound of }S\\
     \end{align*}
 \end{proof}
@@ -134,6 +138,10 @@
 
 ~
 
+\subsection*{Approach 1}
+
+~
+
 \begin{proof}
     \begin{align*}
         &A\coloneqq\{a_n,n\in\mathbb{Z} _+\}\\
@@ -212,6 +220,34 @@
         &\\
         \Rightarrow&I_n=[a_n,b_n)=[1+\frac{1}{n},4-\frac{1}{n}):\\
         &(1,4)=\bigcup_{n=1}^{\infty}I_n,[2,3]=\bigcap_{n=1}^{\infty}I_n\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{Approach 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &A\coloneqq\{a_n,n\in\mathbb{Z} _+\}\\
+        &B\coloneqq\{b_n,n\in\mathbb{Z} _+\}\\
+        &(1,4)=\bigcup_{n=1}^{\infty}I_n,[2,3]=\bigcap_{n=1}^{\infty}I_n\\
+        &I_n\coloneqq[1+\frac{1}{n},4-\frac{1}{n})\\
+        &A\coloneqq\{1+\frac{1}{n},n\in\mathbb{Z} _+\}\\
+        &B\coloneqq\{4-\frac{1}{n},n\in\mathbb{Z} _+\}\\
+        &\{1+\frac{1}{n}\}^\infty_{n=1}\rightarrow1\\
+        &\{4-\frac{1}{n}\}^\infty_{n=1}\rightarrow4\\
+        \Rightarrow&(1,4)=\bigcup_{n=1}^{\infty}I_n\\
+        &n=1:1+\frac{1}{n}=2\\
+        &\text{Since }\{1+\frac{1}{n}\}^\infty_{n=1}\rightarrow1\\
+        \Rightarrow&\max (1+\frac{1}{n})=2\\
+        &n=1:4-\frac{1}{n}=3\\
+        &\text{Since }\{4-\frac{1}{n}\}^\infty_{n=1}\rightarrow3\\
+        \Rightarrow&\min (4-\frac{1}{n})=3\\
+        \Rightarrow&[2,3]=\bigcap_{n=1}^{\infty}I_n\\
+        \Rightarrow&(1,4)=\bigcup_{n=1}^{\infty}I_n,[2,3]=\bigcap_{n=1}^{\infty}I_n\\
     \end{align*}
 \end{proof}
 \end{document}
