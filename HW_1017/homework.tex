@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\allowdisplaybreaks
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &L\coloneqq \sqrt{2}\\
+        &\exists\varepsilon>0:\left|\frac{\sqrt{2n}}{\sqrt{n+1}}-L \right|<\varepsilon\\
+        &\varepsilon\text{ is arbitrary}\\
+        &\left|\frac{\sqrt{2n}}{\sqrt{n+1}}-L \right|\\
+        =&\left|\frac{\sqrt{2n}}{\sqrt{n+1}}-\sqrt{2}\right|\\
+        =&\left|\frac{\sqrt{2n}-\sqrt{2n+2}}{\sqrt{n+1}}\right|\\
+        =&\left|\frac{(\sqrt{2n}-\sqrt{2n+2})(\sqrt{2n}+\sqrt{2n+2})}{\sqrt{n+1}(\sqrt{2n}+\sqrt{2n+2})}\right|\\
+        =&\left|\frac{2n-(2n+2)}{\sqrt{n+1}\sqrt{2n}+2(n+1)}\right|\\
+        =&\left|\frac{-2}{\sqrt{n+1}\sqrt{2n}+2(n+1)}\right|\\
+        =&\frac{2}{\sqrt{n+1}\sqrt{2n}+2(n+1)}\\
+        &\varepsilon>0\\
+        \Rightarrow&\exists N\in\mathbb{Z} _+:N+1>\frac{1}{\varepsilon}\\
+        \Rightarrow&\varepsilon>\frac{1}{N+1}\\
+        &\frac{1}{N+1}>\frac{1}{(N+1)+1}\\
+        \Rightarrow&\forall n>N:\varepsilon>\frac{1}{n+1}\\
+        &\frac{2}{\sqrt{n+1}\sqrt{2n}+2(n+1)}\\
+        <&\frac{2}{2(n+1)}=\frac{1}{n+1}\leqslant\frac{1}{N+1}<\varepsilon\\
+        \Rightarrow&\forall\varepsilon>0,\exists N>0:\forall n>N:\left|\frac{\sqrt{2n}}{\sqrt{n+1}}-\sqrt{2} \right|<\varepsilon\\
+        \Rightarrow&\lim_{n\to\infty}\frac{\sqrt{2n}}{\sqrt{n+1}}=\sqrt{2}\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &L\coloneqq 0\\
+        &\exists\varepsilon>0:\left|\frac{\cos(n)}{n^2}-L \right|<\varepsilon\\
+        &\left|\frac{\cos(n)}{n^2}-L \right|=\frac{\left|\cos(n)\right|}{n^2}\\
+        &\left|\cos(n)\right|\leqslant1\\
+        \Rightarrow&\frac{\left|\cos(n)\right|}{n^2}\leqslant\frac{1}{n^2}\\
+        &\varepsilon>0\\
+        \Rightarrow&\exists N\in\mathbb{Z} _+:N^2>\frac{1}{\varepsilon}\\
+        \Rightarrow&\frac{1}{N^2}<\varepsilon\\
+        &\frac{1}{N^2}>\frac{1}{(N+1)^2}\\
+        \Rightarrow&\forall n\geqslant N,\frac{1}{n^2}<\varepsilon\\
+        &\frac{\left|\cos(n)\right|}{n^2}\leqslant\frac{1}{n^2}\leqslant \frac{1}{N^2}<\varepsilon\\
+        \Rightarrow&\forall\varepsilon>0,\exists N>0:\forall n>N:\left|\frac{\cos(n)}{n^2}-0 \right|<\varepsilon\\
+        \Rightarrow&\lim_{n\to\infty}\frac{\cos(n)}{n^2}=0\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &2^n>0\land n!>0\\
+        \Rightarrow&\frac{2^n}{n!}>0\\
+        &L\coloneqq \lim_{n\to\infty}\frac{\frac{2^{n+1}}{(n+1)!}}{\frac{2^n}{n!}}\\
+        &L=\lim_{n\to\infty}\frac{2}{n+1}\\
+        &n\in\mathbb{Z} _+\\
+        \Rightarrow&\forall n,n+1\geqslant 2,n+1=2\Leftrightarrow n=1\\
+        &\frac{2}{n+1}\leqslant 1,\frac{2}{n+1}=1\Leftrightarrow n=1\\
+        \Rightarrow&\lim_{n\to\infty}\frac{2}{n+1}<1\\
+        &L<1\\
+        \Rightarrow&\lim_{n\to\infty}\frac{2^n}{n!}=0\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &\{x_n\}_{n=1}^\infty\coloneqq \{1\}_{n=1}^\infty\implies\text{constant sequence}\\
+    &\text{It is easy to see that the sequence is convergent}\\
+    &x_n=1\land x_{n+1}=1\\
+    &\lim_{n\to\infty}{\frac{x_{n+1}}{x_n}}=\frac{1}{1}=1\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &\{x_n\}_{n=1}^\infty\coloneqq\{n\}_{n=1}^\infty\\
+    &n\to\infty:x_n\to\infty\implies\text{divergent}\\
+    &x_{n+1}=n+1\land x_n=n\\
+    &\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=\lim_{n\to\infty}\frac{n+1}{n}=\lim_{n\to\infty}(1+\frac{1}{n})=\lim_{n\to\infty}1+\lim_{n\to\infty}\frac{1}{n}=1+0=1\\
+    \Rightarrow&\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=1\land \{x_n\}_{n=1}^\infty\text{ diverges}\\
+\end{align*}
+\end{document}
