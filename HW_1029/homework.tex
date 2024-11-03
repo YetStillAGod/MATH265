@@ -1,0 +1,211 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\allowdisplaybreaks
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\forall x^t\in E[x,y],t<y\implies x^t<x^y\\
+        \Rightarrow&x^y\text{ is an upper bound for }E[x,y]\\
+        &\text{Suppose }\exists x^m:x^m<x^y\text{ is an upper bound of }E[x,y]\\
+        \Rightarrow&m<y\\
+        \Rightarrow&x^m\in E[x,y] \nLeftrightarrow x^m \text{ is an upper bound of }E[x,y]\\
+        \Rightarrow&x^y\text{ is the smallest upper bound}\\
+        \Rightarrow&x^y=\sup E[x,y]\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\exists y'>y\in \mathbb{R} \\
+        \Rightarrow&x^{y'}>x^t\forall x^t\in E[x,y]\\
+        \Rightarrow&x^{y'}\text{ is an upper bound of }E[x,y]\\
+        \Rightarrow&E[x,y]\text{ is bounded}\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &E[x,y+z]\coloneqq\{x^t|t<y+z,t\in\mathbb{R}\}\\
+        &t\coloneqq t_1+t_2,t_1\leqslant y,t_2\leqslant z\\
+        &t\leqslant y+z\\
+        \Rightarrow&x^t\in E[x,y+z]\\
+        &\\
+        &x^{y+z}\leqslant x^yx^z:\\
+        &x^yx^z=\sup E[x,y]\sup E[x,z]\\
+        &x^t=x^{t_1}x^{t_2}\leqslant x^yx^z\\
+        &t\text{ is arbitrary}\\
+        \Rightarrow&x^yx^z\text{ is an upper bound of }E[x,y+z]\\
+        \Rightarrow&x^{y+z}=\sup E[x,y+z]\leqslant x^yx^z\\
+        &\\
+        &x^yx^z\leqslant x^{y+z}:\\
+        &x^t\leqslant \sup E[x,y+z]=x^{y+z}\\
+        &x^t=x^{t_1}x^{t_2}\\
+        &t_1\text{ and }t_2\text{ are arbitrary}\\
+        \Rightarrow&t_1=y,t_2=z\\
+        &x^yx^z\leqslant x^{y+z}\\
+        &\\
+        \Rightarrow&x^yx^z=x^{y+z}\\
+        &\\
+        &\text{Injective}:\\
+        &t_1\leqslant t_2\\
+        &x^{t_1}=x^{t_2}\\
+        \Rightarrow&x^{t_2-t_1}=1\\
+        &\text{Suppose }t_2-t_1\ne0\\
+        \Rightarrow&\exists t:t\in(0,t_2-t_1)\\
+        &x^{t_2-t_1}=\sup E[x,t_2-t_1]\ne1\nLeftrightarrow x^{t_2-t_1}=1\\
+        \Rightarrow&t_2-t_1=0\\
+        &t_1=t_2\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &((x^{\frac{1}{n}}-1)+1)^n\geqslant1+n(x^\frac{1}{n}-1)\\
+        &x\geqslant 1+n(x^\frac{1}{n}-1)\\
+        &x-1\geqslant n(x^{\frac{1}{n}}-1)\\
+        &x^{\frac{1}{n}}\leqslant\frac{x-1}{n}-1\\
+        &\text{set }t>0\land n>\frac{x-1}{t-1}\\
+        &t>\frac{x-1}{n}+1\\
+        \Rightarrow&x^{\frac{1}{n}}<t\\
+        &\\
+        &A(z)\coloneqq \{w\in\mathbb{R}|x^w<z\},y\coloneqq\sup A(z)\\
+        &\text{case 1}:\\
+        &z>x^y\\
+        &t\coloneqq \frac{z}{x^y}>1\\
+        &\exists n:n>\frac{x-1}{t-1}\\
+        &x^{\frac{1}{n}}<t=\frac{z}{x^y}\\
+        &x^{y+\frac{1}{n}}<z\\
+        \Rightarrow&y+\frac{1}{n}>y\in A(z) \nLeftrightarrow y=\sup A(z)\\
+        &\\
+        &\text{case 2}:\\
+        &z<x^y\\
+        &t\coloneqq \frac{x^y}{z}>1\\
+        &\exists n:n>\frac{x-1}{t-1}\\
+        &x^{\frac{1}{n}}<t=\frac{x^y}{z}\\
+        &x^{y-\frac{1}{n}}>z\\
+        &y=\sup A(z)\\
+        \Rightarrow&\exists w:t-\frac{1}{n}<w\\
+        \Rightarrow&x^{y-\frac{1}{n}}<x^w<z\nLeftrightarrow x^{y-\frac{1}{n}}>z\\
+        &\\
+        \Rightarrow&x^y=z\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &(x_n)\coloneqq\sqrt{2},\sqrt{2\sqrt{2}},...\\
+        &x_n=2^{\sum_{k=1}^{n}(\frac{1}{2})^k}\\
+        &\\
+        &n=1:\\
+        &x_1=2^{\frac{1}{2}}=\sqrt{2}\\
+        &IH:x_{n+1}=\sqrt{2x_{n}}\\
+        &LHS=2^{\sum_{k=1}^{n+1}(\frac{1}{2})^k}\\
+        &RHS=\sqrt{2\sqrt{2^{\sum_{k=1}^{n}(\frac{1}{2})^k}}}\\
+        &=2^{\frac{1}{2}+\frac{1}{2}\sum_{k=1}^{n}(\frac{1}{2})^k}\\
+        &=2^{\sum_{k=1}^{n+1}(\frac{1}{2})^k}\\
+        &LHS=RHS\\
+        \Rightarrow&x_n=2^{\sum_{k=1}^{n}(\frac{1}{2})^k}\\
+        &\{\sum_{k=1}^{n}(\frac{1}{2})^k\}_{n\to\infty}\to1\\
+        \rightarrow&\{2^{\sum_{k=1}^{n}(\frac{1}{2})^k}\}_{n\to\infty}\to2\\
+        \Rightarrow&(x_n)\text{ is convergent and has limit }2\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &(x_n)\text{ is convergent}\to(x_n)\text{ has a convergent subsequence}:\\
+        &\text{trivial}\\
+        &\\
+        &(x_{n_k})\text{ is an increasing subsequence of }(x_n)\\
+        &(x_{n_k})_{k\to\infty}\to x\\
+        \Rightarrow&\forall \varepsilon >0,\exists K:\forall k\geqslant K,x-\varepsilon<x_{n_k}<x+\varepsilon\\
+        &\\
+        &\text{case 1}:\\
+        &k\geqslant K\\
+        &x_k\leqslant x_{n_k}<x+\varepsilon\\
+        &\\
+        &\text{case 2}:\\
+        &k\geqslant n_K\\
+        &x_k\geqslant x_{n_K}>x-\varepsilon\\
+        &\\
+        \Rightarrow&k\geqslant\max\{K,n_K\},x-\varepsilon<x_k<x+\varepsilon\\
+        \Rightarrow&\text{convergent}\\
+        &\\
+        \Rightarrow&(x_n)\text{ is convergent}\Leftrightarrow(x_n)\text{ has a convergent subsequence}\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 5}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{convergent}\to\text{bounded}\\
+        &\text{trivial}:\text{every convergent sequence is bounded}\\
+        &\\
+        &\text{bounded}\to\text{convergent}\\
+        &(x_n)\text{ is monotone and bounded}\\
+        \Rightarrow&\exists (x_{n_k})\text{ is a subsequence and convergent}\\
+        \Rightarrow&(x_n)\text{ is convergent}\\
+        &\\
+        \Rightarrow&\text{a monotone sequence is convergent if and only if it is bounded}\\
+    \end{align*}
+\end{proof}
+\end{document}
