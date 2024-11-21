@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=newest}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\section*{Question 1}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &f(x+y)=f(x)+f(y)\\
+        \Rightarrow&\lim_{x\to0}f(x)=\lim_{x\to0}\left(f\left(\frac{x}{2}\right)\right)+\lim_{x\to0}\left(f\left(\frac{x}{2}\right)\right)=2\lim_{x\to0}\left(f\left(\frac{x}{2}\right)\right)\\
+        &y\coloneqq \frac{x}{2}\\
+        &y\to0\\
+        \Rightarrow&\lim_{y\to0}f(y)=\lim_{x\to0}f(x)=L\\
+        \Rightarrow&L=2L\\
+        &L=0\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose }\varepsilon \text{ small enough}\text{ and }c\text{ any number }\in \mathbb{R}\\
+        &f(c+\varepsilon)=f(c)+f(\varepsilon)\\
+        &\lim_{\varepsilon\to0}f(c+\varepsilon)=\lim_{\varepsilon\to0}(f(c)+f(\varepsilon))=f(c)+\lim_{\varepsilon\to0}f(\varepsilon)\\
+        &\text{from a},\lim_{\varepsilon\to0}f(\varepsilon)=0\\
+        \Rightarrow&\lim_{\varepsilon\to0}f(c+\varepsilon)=f(c)\\
+        &\varepsilon\to0=c+\varepsilon\to c\\
+        &x\coloneqq c+\varepsilon\\
+        \Rightarrow&\lim_{x\to c}f(x)=f(c)\\
+        \Rightarrow&\forall c\in\mathbb{R},\lim_{x\to c}f(x)=f(c)\\
+    \end{align*}
+\end{proof}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &x\in\mathbb{Q}:\\
+        \Rightarrow&x\coloneqq\frac{p}{q}\\
+        &f\left(\frac{p}{q}\right)=f\left(\frac{1}{q}+...\frac{1}{q}\right)=p\cdot f\left(\frac{1}{q}\right)\\
+        &text{By the same method}:f(1)=f\left(\frac{q}{q}\right)=q\cdot f\left(\frac{1}{q}\right)\\
+        \Rightarrow&f\left(\frac{1}{q}\right)=\frac{1}{q}f(1)\\
+        \Rightarrow&f\left(\frac{p}{q}\right)=\frac{p}{q} f\left(1\right)\\
+        \Rightarrow&\forall x\in \mathbb{Q}:f(x)=f(1)x\\
+        &\\
+        &x\in \mathbb{R}\setminus\mathbb{Q}:\\
+        &\exists (x_n)\in\mathbb{Q}:n\to\infty,(x_n)\to x\\
+        \Rightarrow&\lim_{n\to\infty}x_n=x\\
+        &\text{By b}:\lim_{n\to\infty}f(x_n)=f(x)\\
+        &x_n\text{ is rational}\\
+        &\text{By previous case}: f(x_n)=f(1)x_n\\
+        \Rightarrow&\lim_{n\to\infty}f(x_n)=f(1)\lim_{n\to\infty}x_n\\
+        &\lim_{n\to\infty}x_n=x\\
+        \Rightarrow&\lim_{n\to\infty}f(x_n)=f(1)x\\
+        &\lim_{n\to\infty}f(x_n)=f(x)\\
+        \Rightarrow&f(x)=f(1)x\\
+        &\\
+        &\forall x\in\mathbb{R},f(x)=f(1)x\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &x\in S\\
+        \Rightarrow&f(x)\leqslant g(x)\\
+        &\text{Since }f,g\text{ are continuous and }c\text{ is a cluster point}\\
+        \Rightarrow&\lim_{x\to c}f(x)=f(c)\\
+        &\lim_{x\to c}g(x)=g(c)\\
+        &f(x)\leqslant g(x)\\
+        &f,g\text{ are continuous on }S,c\text{ is a cluster point}\\
+        \Rightarrow&\lim_{x\to c}f(x)\leqslant\lim_{x\to c}g(x)\\
+        \Rightarrow&f(c)\leqslant g(c)\\
+        &c\in S\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose }f\text{ is not continuous}\\
+        \Rightarrow&\exists \varepsilon>0,\forall \delta>0,|x-c|<\delta:|f(x)-f(c)|\geqslant\varepsilon\\
+        &\\
+        &x>c:\\
+        &f(x)\geqslant f(c)\\
+        &|f(x)-f(c)|\geqslant\varepsilon\\
+        \Rightarrow&f(x)\geqslant f(c)+\varepsilon\\
+        &x-c<\delta\\
+        \Rightarrow&x<c+\delta\\
+        &f(x)\leqslant f(c+\delta)\\
+        &IVP: \exists z\in [c,x]:f(z)=f(c)+\frac{\varepsilon}{2}\\
+        \Rightarrow&f(c)+\frac{\varepsilon}{2}<f(x)\leqslant f(c+\delta)\\
+        &\text{take }\delta\text{ small enough}:\\
+        &\exists\varepsilon>0,\exists \delta>0:f(c+\delta)-f(c)<\frac{\varepsilon}{2}<\varepsilon\\
+        &\nLeftrightarrow \\
+        &\\
+        &x<c:\\
+        &f(x)\leqslant f(c)\\
+        &|f(x)-f(c)|\geqslant\varepsilon\\
+        \Rightarrow&f(x)\leqslant f(c)-\varepsilon\\
+        &c-x<\delta\\
+        \Rightarrow&x>c-\delta\\
+        &f(x)\geqslant f(c-\delta)\\
+        &IVP: \exists z\in [x,c]:f(z)=f(c)-\frac{\varepsilon}{2}\\
+        \Rightarrow&f(c-\delta)\leqslant f(x)<f(c)-\frac{\varepsilon}{2}\\
+        &\text{take }\delta\text{ small enough}:\\
+        &\exists\varepsilon>0,\exists \delta>0:f(c)-f(c-\delta)<\frac{\varepsilon}{2}<\varepsilon\\
+        &\nLeftrightarrow \\
+        &\\
+        &f\text{ is continuous}\\
+    \end{align*}
+\end{proof}
+\end{document}
