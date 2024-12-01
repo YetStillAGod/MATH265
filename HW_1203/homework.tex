@@ -1,0 +1,226 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=newest}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\section*{Question 1}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Let }f:S\to\mathbb{R}\\
+        &f\text{ is uniformly continuous}\\
+        \Rightarrow&\forall \varepsilon>0,\exists\delta>0:\forall x,y\in S,|x-y|<\delta\implies |f(x)-f(y)|<\varepsilon\\
+        &\text{Given a specific }\varepsilon\\
+        &\exists (x_i)_0^N:\bigcup_{i}U_{x_i}=S\\
+        \Rightarrow&x_i\in S,\exists \delta>0:\forall x\in S,|x-x_i|<\delta\implies |f(x)-f(x_i)|<\varepsilon\\
+        &|f(x)|-|f(x_i)|\leqslant||f(x)|-|f(x_i)||\leqslant|f(x)-f(x_i)|\\
+        \Rightarrow&|f(x)|-|f(x_i)|<\varepsilon\\
+        &|f(x)|<|f(x_i)|+\varepsilon\\
+        \Rightarrow&f(x)<|f(x_i)+\varepsilon\\
+        \Rightarrow&\forall x\in(x_i-\delta,x_i+\delta),f(x)<|f(x_i)|+\varepsilon\\
+        &\text{Same for all the others}\\
+        \Rightarrow&\forall x\in S, f(x)<\max(|f(x_i)|)+\varepsilon\\
+        &M\coloneqq\max(f(x_i))+\varepsilon\in\mathbb{R}\\
+        \Rightarrow&\forall x\in S, f(x)<M\\
+        &f\text{ is bounded}\\
+    \end{align*}
+\end{proof}
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose }f\text{ is uniformly continuous on }(0,1)\\
+        &(0,1)\text{ is bounded}\\
+        \Rightarrow&f\text{ is bounded on }(0,1)\\
+        &x\to0^+:f(x)\to\infty\\
+        \Rightarrow&f(x)\text{ is not bounded}\\
+        &\nLeftrightarrow\\
+        \Rightarrow&f\text{ is not uniformly continunous on }(0,1)\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &f\text{ is periodic}\\
+        &\text{Suppose }p:f(x+p)=f(x)\\
+        \Rightarrow&\text{Consider interval }[0,p]:\\
+        &f\text{ is continuous on }[0,p]\\
+        \Rightarrow&\exists m,n:\forall x\in [0,p]m\leqslant f(x)\leqslant n\\
+        &\forall y\in \mathbb{R},\exists n\in\mathbb{Z},x\in[0,p]:y=x+np\\
+        \Rightarrow&f(y)=f(x)\\
+        &\forall x\in [0,p],m\leqslant f(x)\leqslant n\\
+        \Rightarrow&\forall y\in \mathbb{R}m\leqslant f(y)\leqslant n\\
+        \Rightarrow&f\text{ is bounded}\\
+        &f\text{ is continuous on }[0,p]\\
+        \Rightarrow&f\text{ is uniformly continuous on }[0,p]\\
+        \Rightarrow&\forall \varepsilon >0,\exists \delta>0:\forall x,y\in [0,p],|x-y|<\delta\implies |f(x)-f(y)|<\varepsilon\\
+        &\forall x',y'\in \mathbb{R},\exists m,n\in\mathbb{Z},x\in[0,p]:x'=x+mp,y'=y+np\\
+        \Rightarrow&f(x')=f(x),f(y')=f(y)\\
+        \Rightarrow&|f(x')-f(y')|<\varepsilon\\
+        &|x'-y'|=|x-y+(m-n)p|\leqslant |x-y|+|(m-n)p|<\delta+|(m-n)p|\\
+        \Rightarrow&\forall \varepsilon >0,\exists \delta>0:\forall x,y\in \mathbb{R},|x-y|<\delta\implies |f(x)-f(y)|<\varepsilon\\
+        &f\text{ is uniformly continuous on }\mathbb{R}\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &f\text{ is Lipschitz continuous}\\
+        \Rightarrow&\forall x,y\in [a,\infty),\exists K:|f(x)-f(y)|\leqslant K|x-y|\\
+        &\left|\frac{f(x)}{x}-\frac{f(y)}{y}\right|=\left|\frac{yf(x)-xf(y)}{xy}\right|\\
+        &=\left|\frac{yf(x)-xf(y)+xf(x)-xf(x)}{xy}\right|\\
+        &=\left|\frac{(y-x)f(x)+x(f(x)-f(y))}{xy}\right|\\
+        &\leqslant\left|\frac{(y-x)f(x)}{xy}\right|+\left|\frac{x(f(x)-f(y))}{xy}\right|=\frac{|f(x)|}{x}\cdot \frac{|y-x|}{y}+\frac{|f(x)-f(y)|}{y}\\
+        \Rightarrow&\left|\frac{f(x)}{x}-\frac{f(y)}{y}\right|\leqslant \frac{|f(x)|}{x}\cdot \frac{|y-x|}{y}+\frac{K|x-y|}{y}=|x-y|\left(\frac{|f(x)|}{xy}+\frac{K}{y}\right)\\
+        &|f(x)-f(y)|\leqslant K|x-y|\\
+        &y\coloneqq a\\
+        \Rightarrow&|f(x)-f(a)|\leqslant K|x-a|\\
+        &\left|\frac{f(x)-f(a)}{x}\right|\leqslant \frac{K|x-a|}{x}\\
+        &\left|\frac{f(x)}{x}\right|-\left|\frac{f(a)}{x}\right|\leqslant\left|\frac{f(x)-f(a)}{x}\right|\\
+        \Rightarrow&\left|\frac{f(x)}{x}\right|-\left|\frac{f(a)}{x}\right|\leqslant\frac{K|x-a|}{x}\\
+        &\frac{f(x)}{x}\leqslant\frac{K(x-a)}{x}+\left|\frac{f(a)}{x}\right|=K-\frac{Ka}{x}+\frac{|f(a)|}{x}\\
+        &g(x)\coloneqq K+\frac{|f(a)|-Ka}{x}\\
+        &\frac{1}{x}\text{ is monotonic on }[a,\infty)\\
+       \Rightarrow&g(x)\text{ is monotonic on }[a,\infty)\\
+        &x\to a:g(x)\to\frac{|f(a)|}{a}\\
+        &x\to \infty: g(x)\to K\\
+        \Rightarrow&K-\frac{Ka}{x}+\frac{|f(a)|}{x}\text{ is bounded}\\
+        \Rightarrow&M\in\mathbb{R}:\forall x\in [a,\infty),K-\frac{Ka}{x}+\frac{|f(a)|}{x}<M\\
+        \Rightarrow&\left|\frac{f(x)}{x}-\frac{f(y)}{y}\right|<|x-y|\left(\frac{M}{y}+\frac{K}{y}\right)<|x-y|\left(\frac{M}{a}+\frac{K}{a}\right)\\
+        &\delta\coloneqq \frac{a\varepsilon}{M+K}\\
+        \Rightarrow&\forall \varepsilon>0,\exists \delta=\frac{a\varepsilon}{M+K}>0: \\
+        &\forall x,y\in[a,\infty),|x-y|<\delta\implies\left|\frac{f(x)}{x}-\frac{f(y)}{y}\right|<|x-y|\left(\frac{M}{a}+\frac{K}{a}\right)<\varepsilon\\
+        \Rightarrow&f\text{ is uniformly continuous on }[a,\infty)\\
+    \end{align*}
+\end{proof}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &f(x)=x^2\\
+    &\\
+    &\text{Local Lipschitz continuous}:\\
+    &I\coloneqq [a,b]\\
+    &\forall x,y\in [a,b],|x+y|\leqslant |2b|\\
+    &|x+y||x-y|\leqslant |x-y||2b|\\
+    &|x^2-y^2|=|f(x)-f(y)|\leqslant |x-y||2b|\\
+    &K\coloneqq |2b|\\
+    \Rightarrow&\forall x,y\in[a,b],|f(x)-f(y)|\leqslant K|x-y|\\
+    &\\
+    &\text{Not Lipschitz continuous}:\\
+    &\text{Suppose }f\text{ is Lipschitz continuous}\\
+    \Rightarrow&\forall x,y\in \mathbb{R},\exists K>0: |f(x)-f(y)|\leqslant K|x-y|\\
+    &|x^2-y^2|\leqslant K|x-y|\\
+    &|x+y|\leqslant K\\
+    &x\coloneqq \frac{K}{2}+1,y\coloneqq \frac{K}{2}\\
+    \Rightarrow&x,y\in\mathbb{R}:|x+y|>K\\
+    &\nLeftrightarrow\\
+    \Rightarrow&f\text{ is not Lipschitz continuous}\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &f(x)=\sqrt{x}\\
+    &\\
+    &\text{ H\"older continuous}:\\
+    &\text{Consider }4|x-y|-(x+y-2\sqrt{xy})\\
+    &\text{Suppose }0<y<x<1\\
+    &4x-4y-x-y+2\sqrt{xy}\\
+    &=3x-5y+2\sqrt{xy}\\
+    &=(3x-3y)+(2\sqrt{xy}-2y)\\
+    &3x-3y>0\land2\sqrt{xy}-2y>0\\
+    \Rightarrow&(3x-3y)+(2\sqrt{xy}-2y)>0\\
+    &\text{Same for }0<x<y<1\\
+    &\text{For }x=y:(3x-3y)+(2\sqrt{xy}-2y)=0\\
+    \Rightarrow&4|x-y|-(x+y-2\sqrt{xy})\geqslant0\\
+    &x+y-2\sqrt{xy}\leqslant4|x-y|\\
+    &|\sqrt{x}-\sqrt{y}|^2\leqslant(2|x-y|^\frac{1}{2})^2\\
+    &|\sqrt{x}-\sqrt{y}|\leqslant2|x-y|^\frac{1}{2}\\
+    &K=2,\alpha=\frac{1}{2}\\
+    \Rightarrow&\forall x,y\in [0,1],\exists K:|g(x)-g(y)|\leqslant K|x-y|^\alpha,0<\alpha<1\\
+    &\\
+    &\text{Not Lipschitz continuous}:\\
+    &\text{Suppose }g\text{ is Lipschitz continuous}\\
+    \Rightarrow&\forall x,,y\in [0,1],\exists K:|g(x)-g(y)|\leqslant K|x-y|\\
+    &\text{Consider }y=0\in[0,1]:|g(x)|\leqslant K|x|\\
+    &\sqrt{x}\leqslant Kx\\
+    &x^{-\frac{1}{2}}\leqslant K\\
+    &x\coloneqq (\frac{1}{K+1})^2\in[0,1]\\
+    &x^{-\frac{1}{2}}=K+1>K\\
+    \Rightarrow&\nLeftrightarrow\\
+    \Rightarrow&g\text{ is not Lipschitz continuous}\\
+\end{align*}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{proof}
+    \begin{align*}
+        &\text{Suppose arbitrary }0<x<y<1\\
+        &x_k\coloneqq x+\frac{k}{n}(y-x),k\in[0,n]\cap\mathbb{Z}\\
+        &|x_{k+1}-x_k|=\frac{y-x}{n}\\
+        \Rightarrow&\exists K>0,|h(x_k)-h(x_{k+1})|\leqslant K(\frac{y-x}{n})^\alpha\\
+        &|h(x)-h(y)|=|h(x_0)-h(x_n)|\leqslant\sum^{n-1}{i=0}|h(x_i)-h(x_{i+1})|\\
+        \Rightarrow&|h(x)-h(y)|\leqslant \sum^{n-1}{i=0}K(\frac{y-x}{n})^\alpha\\
+        &|h(x)-h(y)|\leqslant nK(\frac{y-x}{n})^\alpha\\
+        &nK(\frac{y-x}{n})^\alpha=K(y-x)^\alpha n^{1-\alpha}\\
+        &n\to\infty:n^{1-\alpha}\to0\\
+        \Rightarrow&nK(\frac{y-x}{n})^\alpha=0\\
+        &|h(x)-h(y)|\leqslant0\\
+        \Rightarrow&h(x)=h(y)\\
+        &x,y\text{ are arbitrary}\\
+        \Rightarrow&\forall x,y\in [0,1],h(x)=h(y)\\
+        &h\text{ is a constant function}\\
+    \end{align*}
+\end{proof}
+\end{document}
